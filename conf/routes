@@ -1,0 +1,34 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
+
+GET		/location/new				controllers.Location.Locations.newLocation(name: String?=null,description: String?=null,latitude: Double?=0.0,longitude: Double?=0.0,tpe: Long?=0,image: String?=null)
+GET		/location/delete			controllers.Location.Locations.deleteLocation(id: Long?=0)
+GET		/location/update			controllers.Location.Locations.updateLocation(id: Long?=0,name: String?=null,description: String?=null,latitude: Double?=0.0,longitude: Double?=0.0,tpe: Long?=0,image: String?=null)
+GET		/location/list				controllers.Location.Locations.list()
+GET		/location/find				controllers.Location.Locations.find()
+GET		/location/addForm			controllers.Location.Locations.addForm()
+POST	/location/saveForm			controllers.Location.Locations.saveForm()
+POST	/location/updateForm		controllers.Location.Locations.updateForm(id:Long?=0)
+GET		/location/editForm			controllers.Location.Locations.editForm(id:Long?=0)
+GET		/location/picture			controllers.Location.Locations.picture(id:Long?=0)
+
+
+GET		/location-type/new			controllers.Location.LocationTypes.newLocationType(tpe: String?=null,description: String?=null)
+GET		/location-type/delete		controllers.Location.LocationTypes.deleteLocationType(id: Long?=0)
+GET		/location-type/update		controllers.Location.LocationTypes.updateLocationType(id: Long?=0,tpe: String?=null,description: String?=null)
+GET		/location-type/list			controllers.Location.LocationTypes.list()
+
+GET		/course/new					controllers.Course.Courses.newCourse(subject: String?=null,code: Int?=0,title: String?=null,location: Long?=0)
+GET		/course/delete				controllers.Course.Courses.deleteCourse(id: Long?=0)
+GET		/course/update				controllers.Course.Courses.updateCourse(id: Long?=0,subject: String?=null,code: Int?=0,title: String?=null,location: Long?=0)
+GET		/course/list				controllers.Course.Courses.list()
+GET		/course/find				controllers.Course.Courses.find()
+
+
